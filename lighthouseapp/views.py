@@ -1,5 +1,4 @@
-from django.shortcuts import render, redirect
-from django.http import HttpResponseRedirect
+from django.shortcuts import render
 from .models import Resource
 
 # import django_filters
@@ -23,16 +22,12 @@ def resource_filter(request):
         if form.is_valid():
             cd = form.cleaned_data
             my_result = Resource.objects.filter(aspiration=cd['aspiration'])
-            import ipdb
-            ipdb.set_trace()
-            return my_result  # HttpResponseRedirect(reverse('result', kwargs{'result': result}))
+            return render(request,
+                          'lighthouseapp/result.html',
+                          {'results': my_result})
         else:
             form = ResourceFilterForm()
             return render(request, 'lighthouseapp/filter.html', {'form': form})
     else:
         form = ResourceFilterForm()
         return render(request, 'lighthouseapp/filter.html', {'form': form})
-
-
-def result(request):
-    return render(request, 'lighthouseapp/result.html', {'result': result})

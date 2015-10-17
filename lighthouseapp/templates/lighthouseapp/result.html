@@ -13,22 +13,18 @@
 
 <body>
 	
-	<h1>LightHouse</h1>
+	<h1>Results:</h1>
         </div>
         
-	
-
+        {% for result in results %}
+            {{ result.name }}
+            <br>
+        {% endfor %}
 	 <div >
-			<p> {{}} </p>
 
 	</div>
         
-<p> Browse Button </p>
-<p> Filter Button </p>
+<p> Result page </p>
 
 </body>
 </html>
-
-
-
-	

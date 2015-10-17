@@ -38,7 +38,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'lighthouseapp',
-    # 'django_filters',
 )
 
 MIDDLEWARE_CLASSES = (
