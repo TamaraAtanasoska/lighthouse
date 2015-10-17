@@ -19,18 +19,21 @@ class Resource(models.Model):
         ("NT", "Networks"),
         ("HA", "Hackaton"),
         ("OT", "Other"),
+        ("AL", "All"),
     )
     category = models.CharField(max_length=2, choices=CATEGORY_CHOICES)
     ASPIRATION_CHOICES = (
         ("PM", "Product manager"),
         ("PR", "Programming"),
         ("DE", "Design"),
+        ("AL", "All"),
     )
     aspiration = models.CharField(max_length=2, choices=ASPIRATION_CHOICES)
     GROUP_CHOICES = (
         ("ST", "Student"),
         ("UN", "Unemployed"),
         ("OT", "Other"),
+        ("AL", "All"),
     )
     group = models.CharField(max_length=2, choices=GROUP_CHOICES)
     LEVEL_CHOICES = (
