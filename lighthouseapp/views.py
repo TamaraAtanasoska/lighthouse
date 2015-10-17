@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
 from .models import Resource
 
-import django_filters
+# import django_filters
 from .forms import ResourceFilterForm
 
 
@@ -18,29 +18,21 @@ def browse(request):
 
 
 def resource_filter(request):
-	if request.method == 'POST':		
-		form = ResourceFilterForm(request.POST)
-		if form.is_valid():
-			cd = form.cleaned_data
-			my_result = Resource.objects.filter(aspiration = cd['aspiration'])
-			# import ipdb
-			# ipdb.set_trace()
-			return pass #HttpResponseRedirect(reverse('result', kwargs{'result': result}))
-		else:
-			form = ResourceFilterForm()
-			return render(request, 'lighthouseapp/filter.html', {'form': form})
-	else:
-		form = ResourceFilterForm()
-		return render(request, 'lighthouseapp/filter.html', {'form': form})
-     
+    if request.method == 'POST':
+        form = ResourceFilterForm(request.POST)
+        if form.is_valid():
+            cd = form.cleaned_data
+            my_result = Resource.objects.filter(aspiration=cd['aspiration'])
+            import ipdb
+            ipdb.set_trace()
+            return my_result  # HttpResponseRedirect(reverse('result', kwargs{'result': result}))
+        else:
+            form = ResourceFilterForm()
+            return render(request, 'lighthouseapp/filter.html', {'form': form})
+    else:
+        form = ResourceFilterForm()
+        return render(request, 'lighthouseapp/filter.html', {'form': form})
+
+
 def result(request):
-	return render(request, 'lighthouseapp/result.html', {'result' : result})
-
-
-
-
-
-
-
-# Create your views here.
-
+    return render(request, 'lighthouseapp/result.html', {'result': result})
