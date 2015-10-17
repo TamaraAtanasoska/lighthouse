@@ -7,7 +7,7 @@ class Resource(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
     logo = models.ImageField(upload_to='profile_images', blank=True)
-    # link =
+    link = models.CharField(max_length=150)
     location = models.CharField(max_length=150)
     CATEGORY_CHOICES = (
         ("ME", "Meetup"),
