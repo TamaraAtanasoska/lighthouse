@@ -60,3 +60,5 @@ target/
 
 #Virtualenv
 lightenv
+
+settings.py
