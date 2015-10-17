@@ -40,6 +40,7 @@ class Resource(models.Model):
         ("BG", "Beginner"),
         ("IN", "Intermediate"),
         ("AD", "Advanced"),
+        ("AL", "All"),
     )
     level = models.CharField(max_length=2, choices=LEVEL_CHOICES)
 
