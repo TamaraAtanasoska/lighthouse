@@ -1,8 +1,13 @@
 from django.shortcuts import render
 from .models import Resource
-#from .forms import ResourceForm
+
 
 def start(request):
-     return render(request, 'lighthouseapp/start.html')
+    return render(request, 'lighthouseapp/start.html')
 
-# Create your views here.
+
+def browse(request):
+    resources = Resource.objects.order_by('category')
+    return render(request,
+                  'lighthouseapp/browse.html',
+                  {'resources': resources})
