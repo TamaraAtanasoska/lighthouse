@@ -26,19 +26,19 @@ class Resource(models.Model):
         ("PR", "Programming"),
         ("DE", "Design"),
     )
-    aspiration = models.CharField(max_length=2, choices=CATEGORY_CHOICES)
+    aspiration = models.CharField(max_length=2, choices=ASPIRATION_CHOICES)
     GROUP_CHOICES = (
         ("ST", "Student"),
         ("UN", "Unemployed"),
         ("OT", "Other"),
     )
-    group = models.CharField(max_length=2, choices=CATEGORY_CHOICES)
+    group = models.CharField(max_length=2, choices=GROUP_CHOICES)
     LEVEL_CHOICES = (
         ("BG", "Beginner"),
         ("IN", "Intermediate"),
         ("AD", "Advanced"),
     )
-    level = models.CharField(max_length=2, choices=CATEGORY_CHOICES)
+    level = models.CharField(max_length=2, choices=LEVEL_CHOICES)
 
     def __str__(self):
         return self.name
