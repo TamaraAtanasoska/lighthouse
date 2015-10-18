@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'lighthouseapp',
+    'django_countries',
 )
 
 MIDDLEWARE_CLASSES = (

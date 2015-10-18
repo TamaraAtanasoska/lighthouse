@@ -1,4 +1,5 @@
 from django.db import models
+from django_countries.fields import CountryField
 
 # Create your models here.
 
@@ -8,7 +9,8 @@ class Resource(models.Model):
     description = models.TextField()
     logo = models.ImageField(upload_to='profile_images', blank=True)
     link = models.CharField(max_length=150)
-    location = models.CharField(max_length=150)
+    city = models.CharField(max_length=150, null=True)
+    country = CountryField(blank_label='(Select Country)')
     CATEGORY_CHOICES = (
         ("ME", "Meetup"),
         ("CO", "Conference"),
@@ -47,6 +49,7 @@ class Resource(models.Model):
         ("FE", "Identified as female"),
         ("LG", "LGBTQI"),
         ("RA", "Race"),
+        ("AL", "All"),
     )
     group = models.CharField(max_length=2, choices=GROUP_CHOICES)
 

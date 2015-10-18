@@ -1,6 +1,7 @@
+import requests
+
 from django.shortcuts import render
 from .models import Resource
-
 from .forms import ResourceFilterForm
 
 
@@ -10,9 +11,26 @@ def start(request):
 
 def browse(request):
     resources = Resource.objects.order_by('category')
+    # Add maps
+    # maps = []
+    #map_url = 'https://geocoder.cit.api.here.com/6.2/geocode.json'
+    ## map_url = 'https://image.maps.cit.api.here.com/mia/1.6/mapview'
+    #params = {
+    #    'app_id': '6d0g57ZEuwQh6BsEX8SZ',
+    #    'app_code': 'Ad6FxUzEnSS3PMyXfdCJWA',
+    #    }
+    ## How to optimize this?
+    #for resource in resources:
+    #    country = str(resource.country.name)
+    #    params['country'] = country
+    #    response = requests.get(map_url, params=params)
+    #    import ipdb
+    #    ipdb.set_trace()
     return render(request,
                   'lighthouseapp/browse.html',
-                  {'resources': resources})
+                  {
+                      'resources': resources,
+                      })
 
 
 def resource_filter(request):
