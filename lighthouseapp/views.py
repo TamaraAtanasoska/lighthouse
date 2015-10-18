@@ -22,7 +22,9 @@ def resource_filter(request):
             cd = form.cleaned_data
             my_result = Resource.objects.filter(aspiration=cd['aspiration'],
                                                 group=cd['group'],
-                                                level=cd['level'])
+                                                level=cd['level'],
+                                                status=cd['status']
+                                                )
             return render(request,
                           'lighthouseapp/result.html',
                           {'results': my_result})
@@ -34,6 +36,6 @@ def resource_filter(request):
         return render(request, 'lighthouseapp/filter.html', {'form': form})
 
 
-def detail(request, primary_key):
-    resource = Resource.objects.get(pk=primary_key)
+def detail(request, pk):
+    resource = Resource.objects.get(pk=pk)
     return render(request, 'lighthouseapp/detail.html', {'resource': resource})
