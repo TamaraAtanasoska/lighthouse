@@ -14,26 +14,31 @@
   	</head>
 
     <body> 
-	      <div class="container text-center">
-            <h1 id="title">LightHouse</h1>    
-        <div class="container text-center">     
-            <h3>A site for the underrepresented</h3>
+	      <div class="container">
+            <div class="row">
+                <div class="col-md-6" style="margin-top: 10%;text-align: right;height: 100%;"> 
+                    <h1 id="title">LightHouse</h1>    
+                    <h3>A site for the underrepresented</h3>
+                </div>
+                <div class="col-md-6"> 
+                    <img src="http://gruberb.com/diverse.png" alt="background" style="width:300px;height:307px;">
+                </div>
+              </div>
         </div> 
-        <div class="container text-left">     
+        <div class="container text-left" style="margin-top: 15px">     
             <p>Lighthouse was made to help the underrepresented. By this we mean smaller groups from the tech community that may find it hard to find each other to share professional interests and knowledge. May it be a hackathon, networking, workshops, mentoring programs or a simple meetup focussing on the area of expertise where you want to learn more or share your knowledge we. We will help you find it.</p>
  
           <div class="row">
           <div class="col-md-12"> 
             <p><strong>How to browse:</strong> If you’re not sure what you’re looking for yet, just hit ‘browse’ and we’ll suggest you something to get started with.</p>
           
-            <p><strong>How to search:</strong> Simply click on Search, use our search filters and hit send. We’ll give you a list of anything that might be going on near you.</p>
+            <p><strong>How to search:</strong> Simply click on Filter, use our search filters and hit send. We’ll give you a list of anything that might be going on near you.</p>
             </div>
           </div>
-          </div> 
           <div class="row text-center">
            <div class="col-sm-6"><a href='browse/'><input class="btn btn-default" style="display: block; width: 100%;" type="submit" value="Browse"></a></div>
 
-            <div class="col-sm-6"><a href="recoursefilter/"><input class="btn btn-default" style="display: block; width: 100%;" type="submit" value="Search"></a></div>
+            <div class="col-sm-6"><a href="resourcefilter/"><input class="btn btn-default" style="display: block; width: 100%;" type="submit" value="Filter"></a></div>
 
           </div>
           <div class="row text-left" style="margin-top: 20px;">
@@ -46,29 +51,8 @@
             <div class="col-md-12"><iframe class="iframe" width="100%" height="400" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https://soundcloud.com/cubecasts/sets/women-in-tech&amp;auto_play=false&amp;buying=false&amp;liking=false&amp;download=true&amp;sharing=true&amp;show_artwork=true&amp;show_comments=true&amp;show_playcount=true&amp;show_user=true&amp;hide_related=false&amp;visual=true&amp;start_track=0&amp;callback=true">
             </iframe></div>
           </div>
-
-        </div>     
-
-
-<script type="text/javascript">
-  (function(){
-    var widgetIframe = document.getElementById('sc-widget'),
-        widget       = SC.Widget(widgetIframe);
-
-    widget.bind(SC.Widget.Events.READY, function() {
-      widget.bind(SC.Widget.Events.PLAY, function() {
-        // get information about currently playing sound
-        widget.getCurrentSound(function(currentSound) {
-          console.log('sound ' + currentSound.get('') + 'began to play');
-        });
-      });
-    });
-
-  }());
-</script>
-	</div>
+        </div>
         
-<p> <a href = 'resourcefilter/'> link</p>
 
 </body>
 </html>
