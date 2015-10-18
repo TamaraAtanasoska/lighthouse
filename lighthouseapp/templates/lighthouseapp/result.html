@@ -19,7 +19,7 @@
         </div>
         
         {% for result in results %}
-            {{ result.name }}
+            <a href= "../detail/{{result.pk}}/"> {{ result.name }} {{ result.pk }} </a>
             <br>
         {% endfor %}
 	 <div >
