@@ -6,4 +6,4 @@ class ResourceFilterForm(forms.ModelForm):
 
     class Meta:
         model = Resource
-        fields = ('aspiration', 'group', 'level')
+        fields = ('aspiration', 'group', 'level', 'status')
