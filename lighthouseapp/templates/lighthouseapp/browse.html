@@ -47,7 +47,8 @@
         </head>                                                                 
                                                                                 
 <body>                                                                          
-maps
+<div id="map" style="width: 10%; height: 100px; background: grey" />
+THERE SHOULD BE A MAP HERE
 <script  type="text/javascript" charset="UTF-8" >
     
 /**
@@ -55,8 +56,10 @@ maps
  *
  * @param  {H.Map} map      A HERE Map instance within the application
  */
-function moveMapToBerlin(map){
-  map.setCenter({lat:52.5159, lng:13.3777});
+
+function setMapViewBounds(map){
+  var bbox = new H.geo.Rect({{top_left_lan}},{{top_left_lat}},{{bottom_right_lat}},{{bottom_right_lon}});
+  map.setViewBounds(bbox);
 }
 
 /**
@@ -85,8 +88,8 @@ var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
 var ui = H.ui.UI.createDefault(map, defaultLayers);
 
 // Now use the map as required...
-moveMapToBerlin(map);
-  </script>
+setMapViewBounds(map);
+</script>
                                                                                 
         <h1>LightHouse</h1>                                                     
          <div >                                                                 
@@ -94,12 +97,9 @@ moveMapToBerlin(map);
         </div>             
         {% for resource in resources %}
         <h1><p>{{ resource.name }}<p></h1>
-                    
                 {{ resource }}
                     <p>{{ resource.description }}</p>
                     <p>{{ resource.link }}</p>
         {% endfor %}                                                                        
-
-                                                                                
 </body>                                                                         
 </html> 
