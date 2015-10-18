@@ -3,28 +3,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>LightHouse</title>
+	        <div class="container">
+            <div class="row">
+            <div class="col-md-6" style="margin-top: 10%;text-align: right;height: 100%;">
+                <h1>LightHouse</h1>                                                                
+                <h3>We hope you found what you were looking for</h3>
+            </div>
+            <div class="col-md-6"> 
+            <img src="http://gruberb.com/diverse.png" alt="background" style="width:300px;height:307px;">
+            </div>
   	
 	<meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
   	
-	
+	                    <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="lighthouse/static/lighthouseapp/my_stylesheet.css">
   	</head>
 
 <body>
 	
-	<h1>Results:</h1>
+	<h1>Details</h1>
         </div>
         
         
-             <p> {{ resource.name }} </p>
+             <p> {{ resource.name }} <br> {{ resource.description }} <br> {{ resource.link }} </p>
             <br>
       
 	 <div >
 
 	</div>
-        
-<p> detail page </p>
 
 </body>
 </html>

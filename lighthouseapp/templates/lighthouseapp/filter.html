@@ -7,29 +7,37 @@
   	
 	<meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
-  	
+  	     <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="lighthouse/static/lighthouseapp/my_stylesheet.css">
 	
   	</head>
 
 <body>
 	
-	<h1>LightHouse</h1>
-        </div>
-        
-	
+        <div class="container">
+            <div class="row">
+            <div class="col-md-6" style="margin-top: 10%;text-align: right;height: 100%;">
+                <h1>LightHouse</h1>                                                                
+                <h3> Go ahead and select your filters</h3>
+            </div>
+            <div class="col-md-6"> 
+            <img src="http://gruberb.com/diverse.png" alt="background" style="width:300px;height:307px;">
+            </div>
 
 	 <div >
 	 	<form  id="user_form" class="form" action="" method="POST" enctype="multipart/form-data">
                    
                    {% csrf_token %}
                     {{ form.as_p }}
-                    <input id="submit" type="submit" value="Filter">
+
+                    <div class="col-sm-6"><a href="result/"><input class="btn btn-default" style="display: block; width: 50%;" type="submit" value="Filter"></a></div>
+
                     </form>
 
 	</div>
         
-<p> Form  </p>
-<p> </p>
+
 
 </body>
 </html>

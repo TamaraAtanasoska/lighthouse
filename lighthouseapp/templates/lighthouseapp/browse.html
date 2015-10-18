@@ -1,33 +1,38 @@
 <!DOCTYPE html>                                                                 
-<html lang="en">                                                                
-<head>                                                                          
+<html lang="en">                     
+    <head>                                     
         <title>LightHouse</title>                                               
                                                                                 
-        <meta charset="utf-8">                                                  
+        <meta charset="utf-8">                                                 
         <meta name="viewport" content="width=device-width, initial-scale=1">    
+                    <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="lighthouse/static/lighthouseapp/my_stylesheet.css">                                                                   
+    </head>                                                                 
                                                                                 
-                                                                                
-        </head>                                                                 
-                                                                                
-<body>                                                                          
-                                                                                
-        <h1>LightHouse</h1>                                                     
-         <div >                                                                 
-               <p> Browse for meetings </p>                                      
-        </div>              
-        {% for resource in resources %}
-        <h1><p>{{ resource.name }}<p></h1>
-                    <p>{{ resource.description }}</p>
-                    <p>{{ resource.level }}</p>
-                    <p>{{ resource.link }}</p>
-                    <p>{{ resource.category }}</p>
-                    <p>{{ resource.asspiration }}</p>
-                    <p>{{ resource.group }}</p>
-                    <p>{{ resource.level }}</p>
-        {% endfor %}                                                                        
+    <body>                                                                
+        <div class="container">
+            <div class="row">
+            <div class="col-md-6" style="margin-top: 10%;text-align: right;height: 100%;">
+                <h1>LightHouse</h1>                                                                
+                <h3> You're browsing through our suggestions. <p>Do you want to go to Filters?</p></h3>
+            </div>
+            <div class="col-md-6"> 
+            <img src="http://gruberb.com/diverse.png" alt="background" style="width:300px;height:307px;">
+            </div>
+            <div class="col-sm-12"><a href="resourcefilter/"><input class="btn btn-default" style="display: block; width: 100%;" type="submit" value="Go to Filters"></a>
+            </div>
+            </div>
 
-<p> Search Button </p>                                                          
-<p> Tag Cloud Button </p>                                                          
+        <div class="container">                                       
+        {% for resource in resources %}
+        <h1><p><a href= "../detail/{{resource.pk}}/">{{ resource.name }}<p></h1></a>
+                    <p>{{ resource.description }}</p>
+                    <p>{{ resource.link }}</p>
+                    <p>{{ resource.logo }}</p>
+        {% endfor %}
+    </div>
+
                                                                                 
 </body>                                                                         
 </html> 
