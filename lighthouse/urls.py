@@ -17,10 +17,10 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 from django.conf.url.static import static
-from django.conf. import settings
-from lighthouse.settings import all
+from django.conf import settings
+# from lighthouse.settings import all
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'', include('lighthouseapp.urls')),
-]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) 
+]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
