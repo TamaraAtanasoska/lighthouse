@@ -2,7 +2,47 @@ from django.db import models
 
 # Create your models here.
 
+class Category(models.Model):
+    name = models.CharField(max_length=100)
+    def __unicode__(self):
+        return self.name
+ 
+class Aspiration(models.Model):
+    name = models.CharField(max_length=100)
+    def __unicode__(self):
+        return self.name
 
+class Status(models.Model):
+    name = models.CharField(max_length=100)
+    def __unicode__(self):
+        return self.name
+
+class Level(models.Model):
+    name = models.CharField(max_length=100)
+    def __unicode__(self):
+        return self.name
+
+class Group(models.Model):
+    name = models.CharField(max_length=100)
+    def __unicode__(self):
+        return self.name
+
+class Resource(models.model):
+    name = models.CharField(max_length=255)
+    description = models.TextField(max_length=1000)
+    logo = models.ImageField(upload_to='profile_images', blank=True)
+    link = models.CharField(max_length=200)
+    location = models.CharField(max_length=150)
+    category = models.ForeighKey(Category)
+    aspiration = models.ManyToManyField(Aspiration)
+    status = models.ManyToManyField(Status)
+    level = models.ManyToManyField(Level)
+    group = models.ManyToManyField(Group)
+
+    def __str__(self):
+        return self.name
+
+"""
 class Resource(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
@@ -19,11 +59,10 @@ class Resource(models.Model):
         ("NT", "Networks"),
         ("HA", "Hackaton"),
         ("OT", "Other"),
-        ("AL", "All"),
     )
     category = models.CharField(max_length=2, choices=CATEGORY_CHOICES)
     ASPIRATION_CHOICES = (
-        ("PM", "Product manager"),
+        ("PM", "Product management"),
         ("PR", "Programming"),
         ("DE", "Product Design"),
         ("AL", "All"),
@@ -52,3 +91,4 @@ class Resource(models.Model):
 
     def __str__(self):
         return self.name
+"""
