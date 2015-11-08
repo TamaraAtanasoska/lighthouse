@@ -27,13 +27,13 @@ class Group(models.Model):
     def __unicode__(self):
         return self.name
 
-class Resource(models.model):
+class Resource(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField(max_length=1000)
     logo = models.ImageField(upload_to='profile_images', blank=True)
     link = models.CharField(max_length=200)
     location = models.CharField(max_length=150)
-    category = models.ForeighKey(Category)
+    category = models.ForeignKey(Category)
     aspiration = models.ManyToManyField(Aspiration)
     status = models.ManyToManyField(Status)
     level = models.ManyToManyField(Level)
